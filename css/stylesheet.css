@@ -76,11 +76,23 @@ a:hover {
     text-decoration: underline;
 }
 
+/* FIX: Navigation Spacing */
+nav {
+    display: flex; /* Use flexbox for centered, equal spacing */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows links to wrap on small screens */
+    margin-top: 10px;
+}
+
 nav a {
     font-weight: bold;
-    padding: 0 15px;
+    /* Use symmetrical padding to ensure the pipe separator is centered */
+    padding: 0 10px; 
     font-size: 1.1em;
+    /* Optional: Ensure links are inline blocks to respect padding consistently */
+    display: inline-block;
 }
+/* END FIX */
 
 hr {
     border: none;
@@ -131,7 +143,6 @@ mark {
 
 table {
     width: 100%;
-
     margin-top: 10px;
     background-color: #334756;
     border: 2.5px solid #A8B3B8;
@@ -336,49 +347,92 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* 4. Table Stacking (Education Section) - THE ULTIMATE FIX */
-table, thead {
-    display: block; 
+/* Media Query for Mobile Devices (max-width: 768px) - FINAL VERSION */
+@media (max-width: 768px) {
+    
+    /* 1. Page and Layout Fixes */
+    body {
+        padding: 0 10px;
+    }
+    
+    .two-column-layout {
+        display: block; 
+        width: 100%;
+        gap: 0;
+    }
+    
+    .two-column-layout #skills, .two-column-layout #hobbies {
+        width: 100%; 
+        margin-bottom: 20px; 
+        padding-right: 20px; 
+    }
+    
+    /* FIX: Ensure mobile navigation links stack or wrap nicely */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        padding: 5px 0; /* Add vertical padding for better tap targets */
+    }
+
+    /* 2. Font Size Adjustments */
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* 3. Media and Image Fit */
+    img, video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .album-cover-image {
+        max-width: 50%;
+    }
+    
+    .my-video-element {
+        width: 100%; 
+        height: auto;
+    }
+
+    /* 4. Table Scaling Fix (Instead of stacking) */
+    table {
+        display: block;
+        width: 95%; 
+        margin: 10px auto; 
+        
+        transform-origin: top left; 
+        transform: scale(0.7); 
+        
+        margin-bottom: -50px; 
+    }
+    
+    /* Reset all table elements back to their original display types to keep columns/rows intact */
+    thead, tbody, th, td, tr { 
+        display: table-cell !important;
+    }
+
+    /* 5. Form and List Adjustments */
+    .contact_form form div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .contact_form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    #work-history ul {
+        padding-left: 30px; 
+    }
+    #work-history li {
+        margin-bottom: 10px;
+    }
 }
-
-thead { 
-    display: none; 
-}
-
-/* CRITICAL FIX: Force the row to be a distinct block with clear separation */
-#experience tr {
-    display: block; 
-    margin-bottom: 20px; /* Separates each entry visually (e.g., WGU from Coursera) */
-    border: 2px solid #E6CCB2; /* Give each education entry a clear box */
-    padding: 10px;
-}
-
-/* Treat the data cell (td) as a block inside its row */
-td { 
-    display: block; 
-    border: none;
-    /* Reset all absolute/relative positioning for simplicity */
-    position: static; 
-    /* Remove padding override to simplify */
-    padding: 5px 0; 
-    text-align: left; 
-}
-
-/* Content Labeling - FINAL ADJUSTMENT */
-td::before {
-    /* Use 'display: inline-block' for reliable sizing, and a fixed width for alignment */
-    display: inline-block;
-    width: 45%; 
-    font-weight: bold;
-    margin-right: 5%; /* Adds space between label and data */
-    text-align: left; 
-}
-
-#experience table td:nth-of-type(1)::before { content: "Institution"; }
-#experience table td:nth-of-type(2)::before { content: "Degree / Certificate"; }
-#experience table td:nth-of-type(3)::before { content: "Graduated"; }
-#experience table td:nth-of-type(4)::before { content: "Course of Study"; }
-#experience table td:nth-of-type(5)::before { content: "Dates"; }
-
-/* Note: No 'float' or 'flow-root' is needed with this 'inline-block' method, simplifying the CSS. */
-
