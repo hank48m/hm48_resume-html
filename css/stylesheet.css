@@ -345,7 +345,7 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE STACKING ATTEMPT */
+/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE STACKING FIX */
 @media (max-width: 768px) {
     
     /* 1. Page and Layout Fixes */
