@@ -76,12 +76,21 @@ a:hover {
     text-decoration: underline;
 }
 
-/* REVERTED NAV: Back to original spacing */
+/* NAVIGATION FIX START */
+nav {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center links horizontally */
+    flex-wrap: wrap; /* Allow links to wrap on very small screens */
+    margin-top: 10px;
+}
+
 nav a {
     font-weight: bold;
-    padding: 0 15px; 
+    padding: 0 10px; /* Reduced and symmetrical padding for even spacing around the '|' */
     font-size: 1.1em;
+    display: inline-block; /* Essential for padding to work correctly */
 }
+/* NAVIGATION FIX END */
 
 hr {
     border: none;
@@ -421,11 +430,6 @@ input[type="submit"]:hover {
     #experience table td:nth-of-type(3)::before { content: "Graduated"; }
     #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
     #experience table td:nth-of-type(5)::before { content: "Dates"; }
-    
-    /* Remove any remaining block settings from generic table elements */
-    table, thead, tbody, th, td { 
-        display: block; 
-    }
     
     /* Reapply the 'tr' block rule over the generic one for styling */
     #experience tr {
