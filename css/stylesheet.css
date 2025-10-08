@@ -352,16 +352,14 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Fix for iOS Data Detectors turning text blue/clickable */
 a[x-apple-data-detectors],
+.work-history-text a,
 .work-history-text {
-    /* Use !important to ensure this overrides iOS's automatic styling */
     color: inherit !important;          
     text-decoration: none !important;    
     pointer-events: none !important;     
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FINAL VERSION */
 @media (max-width: 768px) {
     
     /* 1. Page and Layout Fixes */
@@ -465,4 +463,5 @@ a[x-apple-data-detectors],
         margin-bottom: 10px;
     }
 }
+
 
