@@ -76,28 +76,27 @@ a:hover {
     text-decoration: underline;
 }
 
-/* NAVIGATION FIX START: Uses flexbox and border for perfect pipe spacing */
 nav {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center links horizontally */
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap; 
     margin-top: 10px;
-    color: #E6CCB2; /* Sets the color for the pipe separator border */
+    color: #E6CCB2;
 }
 
 nav a {
     font-weight: bold;
-    padding: 0 10px; /* Symmetrical padding around the links */
+    padding: 0 10px;
     font-size: 1.1em;
     display: inline-block;
-    border-left: 1px solid #E6CCB2; /* CRITICAL: Creates the vertical pipe divider */
+    border-left: 1px solid #E6CCB2;
 }
 
-/* Remove the border from the very first link */
+
 nav a:first-child {
     border-left: none;
 }
-/* NAVIGATION FIX END */
+
 
 hr {
     border: none;
@@ -134,7 +133,7 @@ mark {
     color: #E6CCB2;
     font-style: italic;
     font-weight: 600;
-    padding: 3px 10px;
+    padding: .1px 3px;
     border-radius: 15px;
     font-size: .95em;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -362,7 +361,6 @@ a[x-apple-data-detectors],
 
 @media (max-width: 768px) {
     
-    /* 1. Page and Layout Fixes */
     body {
         padding: 0 10px;
     }
@@ -379,7 +377,6 @@ a[x-apple-data-detectors],
         padding-right: 20px; 
     }
 
-    /* 2. Font Size Adjustments */
     h1 {
         font-size: 1.8em;
     }
@@ -387,7 +384,6 @@ a[x-apple-data-detectors],
         font-size: 1.4em;
     }
 
-    /* 3. Media and Image Fit */
     img, video {
         max-width: 100%;
         height: auto;
@@ -404,7 +400,6 @@ a[x-apple-data-detectors],
         height: auto;
     }
 
-    /* 4. Table Stacking (Education Section) - FINAL WORKING FIX */
     table, thead {
         display: block; 
     }
@@ -413,7 +408,6 @@ a[x-apple-data-detectors],
         display: none; 
     }
     
-    /* Force the row to be a distinct block with clear separation (No shrinking) */
     #experience tr {
         display: block; 
         margin-bottom: 20px; 
@@ -421,7 +415,6 @@ a[x-apple-data-detectors],
         padding: 10px;
     }
     
-    /* Treat the data cell (td) as a block inside its row */
     td { 
         display: block; 
         border: none;
@@ -430,7 +423,6 @@ a[x-apple-data-detectors],
         text-align: left; 
     }
     
-    /* Content Labeling */
     td::before {
         display: inline-block;
         width: 45%; 
@@ -445,8 +437,7 @@ a[x-apple-data-detectors],
     #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
     #experience table td:nth-of-type(5)::before { content: "Dates"; }
     
-    /* 5. Form and List Adjustments */
-    .contact_form form div {
+      .contact_form form div {
         display: block;
         margin-bottom: 10px;
     }
@@ -463,5 +454,6 @@ a[x-apple-data-detectors],
         margin-bottom: 10px;
     }
 }
+
 
 
