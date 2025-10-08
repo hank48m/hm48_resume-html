@@ -76,23 +76,12 @@ a:hover {
     text-decoration: underline;
 }
 
-/* FIX: Navigation Spacing */
-nav {
-    display: flex; /* Use flexbox for centered, equal spacing */
-    justify-content: center;
-    flex-wrap: wrap; /* Allows links to wrap on small screens */
-    margin-top: 10px;
-}
-
+/* REVERTED NAV: Back to original spacing */
 nav a {
     font-weight: bold;
-    /* Use symmetrical padding to ensure the pipe separator is centered */
-    padding: 0 10px; 
+    padding: 0 15px; 
     font-size: 1.1em;
-    /* Optional: Ensure links are inline blocks to respect padding consistently */
-    display: inline-block;
 }
-/* END FIX */
 
 hr {
     border: none;
@@ -347,7 +336,7 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FINAL VERSION */
+/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE STACKING ATTEMPT */
 @media (max-width: 768px) {
     
     /* 1. Page and Layout Fixes */
@@ -365,15 +354,6 @@ input[type="submit"]:hover {
         width: 100%; 
         margin-bottom: 20px; 
         padding-right: 20px; 
-    }
-    
-    /* FIX: Ensure mobile navigation links stack or wrap nicely */
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        padding: 5px 0; /* Add vertical padding for better tap targets */
     }
 
     /* 2. Font Size Adjustments */
@@ -401,21 +381,58 @@ input[type="submit"]:hover {
         height: auto;
     }
 
-    /* 4. Table Scaling Fix (Instead of stacking) */
-    table {
-        display: block;
-        width: 95%; 
-        margin: 10px auto; 
-        
-        transform-origin: top left; 
-        transform: scale(0.7); 
-        
-        margin-bottom: -50px; 
+    /* 4. Table Stacking (Education Section) - FINAL STACKING FIX */
+    table, thead {
+        display: block; 
     }
     
-    /* Reset all table elements back to their original display types to keep columns/rows intact */
-    thead, tbody, th, td, tr { 
-        display: table-cell !important;
+    thead { 
+        display: none; 
+    }
+    
+    /* CRITICAL FIX: Force the row to be a distinct block with clear separation */
+    #experience tr {
+        display: block; 
+        margin-bottom: 20px; 
+        border: 2px solid #E6CCB2; 
+        padding: 10px;
+    }
+    
+    /* Treat the data cell (td) as a block inside its row */
+    td { 
+        display: block; 
+        border: none;
+        position: static; 
+        padding: 5px 0; 
+        text-align: left; 
+    }
+    
+    /* Content Labeling - FINAL ADJUSTMENT */
+    td::before {
+        display: inline-block;
+        width: 45%; 
+        font-weight: bold;
+        margin-right: 5%; 
+        text-align: left; 
+    }
+    
+    #experience table td:nth-of-type(1)::before { content: "Institution"; }
+    #experience table td:nth-of-type(2)::before { content: "Degree / Certificate"; }
+    #experience table td:nth-of-type(3)::before { content: "Graduated"; }
+    #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
+    #experience table td:nth-of-type(5)::before { content: "Dates"; }
+    
+    /* Remove any remaining block settings from generic table elements */
+    table, thead, tbody, th, td { 
+        display: block; 
+    }
+    
+    /* Reapply the 'tr' block rule over the generic one for styling */
+    #experience tr {
+        display: block;
+        margin-bottom: 20px; 
+        border: 2px solid #E6CCB2; 
+        padding: 10px;
     }
 
     /* 5. Form and List Adjustments */
