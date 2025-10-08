@@ -336,85 +336,41 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE FIX */
-@media (max-width: 768px) {
-    
-    /* 1. Page and Layout Fixes */
-    body {
-        padding: 0 10px;
-    }
-    
-    .two-column-layout {
-        display: block; 
-        width: 100%;
-        gap: 0;
-    }
-    
-    .two-column-layout #skills, .two-column-layout #hobbies {
-        width: 100%; 
-        margin-bottom: 20px; 
-        padding-right: 20px; 
-    }
-
-    /* 2. Font Size Adjustments */
-    h1 {
-        font-size: 1.8em;
-    }
-    h2 {
-        font-size: 1.4em;
-    }
-
-    /* 3. Media and Image Fit */
-    img, video {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-    
-    .album-cover-image {
-        max-width: 50%;
-    }
-    
-    .my-video-element {
-        width: 100%; 
-        height: auto;
-    }
-
-   /* 4. Table Stacking (Education Section) - FINAL FIX */
-table { 
-    /* The table itself is still a block element */
+/* 4. Table Stacking (Education Section) - THE ULTIMATE FIX */
+table, thead {
     display: block; 
 }
 
 thead { 
-    /* Hide the header on mobile */
     display: none; 
 }
 
-/* CRITICAL FIX: Treat each table row (tr) as a distinct block unit */
+/* CRITICAL FIX: Force the row to be a distinct block with clear separation */
 #experience tr {
     display: block; 
-    margin-bottom: 15px; /* Add space between education entries */
-    border: 1px solid #A8B3B8; /* Give each entry a visual boundary */
+    margin-bottom: 20px; /* Separates each entry visually (e.g., WGU from Coursera) */
+    border: 2px solid #E6CCB2; /* Give each education entry a clear box */
     padding: 10px;
 }
 
 /* Treat the data cell (td) as a block inside its row */
 td { 
-    display: block; /* Each piece of data now takes a full line within the row */
+    display: block; 
     border: none;
-    position: relative;
-    padding: 5px 6px; /* Reduced vertical padding */
-    text-align: left; /* Aligns content */
+    /* Reset all absolute/relative positioning for simplicity */
+    position: static; 
+    /* Remove padding override to simplify */
+    padding: 5px 0; 
+    text-align: left; 
 }
 
-/* Content Labeling (td::before) - unchanged, still uses float for side-by-side */
+/* Content Labeling - FINAL ADJUSTMENT */
 td::before {
-    float: left;
+    /* Use 'display: inline-block' for reliable sizing, and a fixed width for alignment */
+    display: inline-block;
     width: 45%; 
-    margin-right: 5%; 
     font-weight: bold;
+    margin-right: 5%; /* Adds space between label and data */
     text-align: left; 
 }
 
@@ -424,18 +380,5 @@ td::before {
 #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
 #experience table td:nth-of-type(5)::before { content: "Dates"; }
 
-/* Force the data content to wrap around the floated label */
-#experience tbody td {
-    display: flow-root; 
-}
+/* Note: No 'float' or 'flow-root' is needed with this 'inline-block' method, simplifying the CSS. */
 
-/* Remove any remaining block settings from generic table elements */
-table, thead, tbody, th, td { 
-    display: block; 
-}
-
-/* IMPORTANT: Override the display:block for tr only inside the media query: */
-#experience tr {
-    display: block;
-    /* ... rest of tr styles */
-}
