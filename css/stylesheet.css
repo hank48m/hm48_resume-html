@@ -336,7 +336,7 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FIXED TABLE */
+/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE FIX */
 @media (max-width: 768px) {
     
     /* 1. Page and Layout Fixes */
@@ -393,22 +393,19 @@ input[type="submit"]:hover {
     td { 
         border: none;
         position: relative;
-        /* REDUCED padding-left to give more space for the content */
-        padding-left: 45%; 
-        /* Aligns the content (the value) to the right edge of the cell */
-        text-align: right; 
+        /* Revert padding back to original value */
+        padding: 10px 6px; 
+        /* Ensure text flows correctly */
+        text-align: left; 
     }
     
-    /* Content Labeling */
+    /* Content Labeling - Use float and width to ensure side-by-side display */
     td::before {
-        position: absolute;
-        left: 6px;
-        /* INCREASED label width slightly to prevent line breaks on long labels */
-        width: 40%; 
-        padding-right: 10px; 
-        white-space: nowrap;
+        /* Use 'float' to correctly place the label to the left */
+        float: left;
+        width: 45%; 
+        margin-right: 5%; /* Space between label and data */
         font-weight: bold;
-        /* Aligns the label text to the left */
         text-align: left; 
     }
     
@@ -418,6 +415,11 @@ input[type="submit"]:hover {
     #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
     #experience table td:nth-of-type(5)::before { content: "Dates"; }
     
+    /* Force the data content to wrap around the floated label */
+    #experience tbody td {
+        display: flow-root; 
+    }
+
     /* 5. Form and List Adjustments */
     .contact_form form div {
         display: block;
