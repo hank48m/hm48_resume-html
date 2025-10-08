@@ -381,60 +381,61 @@ input[type="submit"]:hover {
         height: auto;
     }
 
-    /* 4. Table Stacking (Education Section) - CRITICAL FIXES HERE */
-    table, thead, tbody, th, td, tr { 
-        display: block; 
-    }
-    
-    thead { 
-        display: none; 
-    }
-    
-    td { 
-        border: none;
-        position: relative;
-        /* Revert padding back to original value */
-        padding: 10px 6px; 
-        /* Ensure text flows correctly */
-        text-align: left; 
-    }
-    
-    /* Content Labeling - Use float and width to ensure side-by-side display */
-    td::before {
-        /* Use 'float' to correctly place the label to the left */
-        float: left;
-        width: 45%; 
-        margin-right: 5%; /* Space between label and data */
-        font-weight: bold;
-        text-align: left; 
-    }
-    
-    #experience table td:nth-of-type(1)::before { content: "Institution"; }
-    #experience table td:nth-of-type(2)::before { content: "Degree / Certificate"; }
-    #experience table td:nth-of-type(3)::before { content: "Graduated"; }
-    #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
-    #experience table td:nth-of-type(5)::before { content: "Dates"; }
-    
-    /* Force the data content to wrap around the floated label */
-    #experience tbody td {
-        display: flow-root; 
-    }
+   /* 4. Table Stacking (Education Section) - FINAL FIX */
+table { 
+    /* The table itself is still a block element */
+    display: block; 
+}
 
-    /* 5. Form and List Adjustments */
-    .contact_form form div {
-        display: block;
-        margin-bottom: 10px;
-    }
-    
-    .contact_form label {
-        display: block;
-        margin-bottom: 5px;
-    }
-    
-    #work-history ul {
-        padding-left: 30px; 
-    }
-    #work-history li {
-        margin-bottom: 10px;
-    }
+thead { 
+    /* Hide the header on mobile */
+    display: none; 
+}
+
+/* CRITICAL FIX: Treat each table row (tr) as a distinct block unit */
+#experience tr {
+    display: block; 
+    margin-bottom: 15px; /* Add space between education entries */
+    border: 1px solid #A8B3B8; /* Give each entry a visual boundary */
+    padding: 10px;
+}
+
+/* Treat the data cell (td) as a block inside its row */
+td { 
+    display: block; /* Each piece of data now takes a full line within the row */
+    border: none;
+    position: relative;
+    padding: 5px 6px; /* Reduced vertical padding */
+    text-align: left; /* Aligns content */
+}
+
+/* Content Labeling (td::before) - unchanged, still uses float for side-by-side */
+td::before {
+    float: left;
+    width: 45%; 
+    margin-right: 5%; 
+    font-weight: bold;
+    text-align: left; 
+}
+
+#experience table td:nth-of-type(1)::before { content: "Institution"; }
+#experience table td:nth-of-type(2)::before { content: "Degree / Certificate"; }
+#experience table td:nth-of-type(3)::before { content: "Graduated"; }
+#experience table td:nth-of-type(4)::before { content: "Course of Study"; }
+#experience table td:nth-of-type(5)::before { content: "Dates"; }
+
+/* Force the data content to wrap around the floated label */
+#experience tbody td {
+    display: flow-root; 
+}
+
+/* Remove any remaining block settings from generic table elements */
+table, thead, tbody, th, td { 
+    display: block; 
+}
+
+/* IMPORTANT: Override the display:block for tr only inside the media query: */
+#experience tr {
+    display: block;
+    /* ... rest of tr styles */
 }
