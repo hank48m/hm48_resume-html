@@ -76,19 +76,26 @@ a:hover {
     text-decoration: underline;
 }
 
-/* NAVIGATION FIX START */
+/* NAVIGATION FIX START: Uses flexbox and border for perfect pipe spacing */
 nav {
     display: flex; /* Use flexbox for horizontal layout */
     justify-content: center; /* Center links horizontally */
-    flex-wrap: wrap; /* Allow links to wrap on very small screens */
+    flex-wrap: wrap; 
     margin-top: 10px;
+    color: #E6CCB2; /* Sets the color for the pipe separator border */
 }
 
 nav a {
     font-weight: bold;
-    padding: 0 10px; /* Reduced and symmetrical padding for even spacing around the '|' */
+    padding: 0 10px; /* Symmetrical padding around the links */
     font-size: 1.1em;
-    display: inline-block; /* Essential for padding to work correctly */
+    display: inline-block;
+    border-left: 1px solid #E6CCB2; /* CRITICAL: Creates the vertical pipe divider */
+}
+
+/* Remove the border from the very first link */
+nav a:first-child {
+    border-left: none;
 }
 /* NAVIGATION FIX END */
 
@@ -345,7 +352,7 @@ input[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) - FINAL TABLE STACKING FIX */
+/* Media Query for Mobile Devices (max-width: 768px) - FINAL VERSION */
 @media (max-width: 768px) {
     
     /* 1. Page and Layout Fixes */
@@ -390,7 +397,7 @@ input[type="submit"]:hover {
         height: auto;
     }
 
-    /* 4. Table Stacking (Education Section) - FINAL STACKING FIX */
+    /* 4. Table Stacking (Education Section) - FINAL WORKING FIX */
     table, thead {
         display: block; 
     }
@@ -399,7 +406,7 @@ input[type="submit"]:hover {
         display: none; 
     }
     
-    /* CRITICAL FIX: Force the row to be a distinct block with clear separation */
+    /* Force the row to be a distinct block with clear separation (No shrinking) */
     #experience tr {
         display: block; 
         margin-bottom: 20px; 
@@ -416,7 +423,7 @@ input[type="submit"]:hover {
         text-align: left; 
     }
     
-    /* Content Labeling - FINAL ADJUSTMENT */
+    /* Content Labeling */
     td::before {
         display: inline-block;
         width: 45%; 
@@ -431,14 +438,6 @@ input[type="submit"]:hover {
     #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
     #experience table td:nth-of-type(5)::before { content: "Dates"; }
     
-    /* Reapply the 'tr' block rule over the generic one for styling */
-    #experience tr {
-        display: block;
-        margin-bottom: 20px; 
-        border: 2px solid #E6CCB2; 
-        padding: 10px;
-    }
-
     /* 5. Form and List Adjustments */
     .contact_form form div {
         display: block;
