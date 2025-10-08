@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Mallin - Cover Letter</title>
+	<link rel="stylesheet" href="css/stylesheet.css">
+	<script>
+		if (sessionStorage.getItem('authenticated') !== 'true') {
+			window.location.replace("password.html");
+		}
+	</script>
+	</head>
+<body>
+	<header>
+		<h1><strong><u>HM</u></strong></h1>
+		<h2>Henry Mallin </h2>
+        <nav>
+			<span>|</span>
+            <a href="resume.html">Resume</a>
+			<span>|</span>
+            <a href="career_goals.html">Career Goals</a>
+			<span>|</span>
+        </nav>			
+		<hr>
+		<h3>Contact Information:</h3>
+			<h4>Email: <a href="mailto:hmallin@wgu.edu">hmallin@wgu.edu</a></h4>
+			<h4>Phone: <a href="tel:224-548-5554">(224)-548-5554</a></h4>
+		<hr>
+	</header>
+    <main>
+        <section id="letter-document">
+            <article>
+                <p>
+                    <span class="date-line">October 7, 2025</span>
+                </p>
+                <p id="letter_intro"><strong>[Hiring Manager Name]<br>[Hiring Manager Title]<br>[Company Name]<br>[Company Address]<br></strong>
+                </p>
+                <p id="letter_greeting">
+					Dear [Hiring Manager Name],
+				</p>
+                <p id="letter_body">
+					I am writing to express my strong interest in the **[Job Title]** position, which I found advertised on **[Platform]**.  My background in **[Industry/Field]** has provided me with the expertise needed to contribute significantly to **[Company's Name]**'s objectives.  In my previous experience, I consistently applied my knowledge of **[Key Skill]** to solve complex problems. For instance, I successfully completed a project that led to a<mark>**[Quantifiable Result, e.g., 25% Reduction in Waste]**</mark>, demonstrating a strong focus on measurable outcomes.  I am particularly drawn to **[Company Name]**'s dedication to **[Specific Company Mission/Value]**. I believe this commitment to <em>**[Company Vision or Culture]**</em> is the ideal environment for my skills in **[Second Key Skill]** to thrive.  Thank you for your time and consideration. I am eager to discuss how my qualifications align with this exciting opportunity.
+				</p>
+				<p id="sincerely">
+					Sincerely,
+				</p>
+				<p>[My name]</p>
+            </article>
+		<hr>
+        </section>
+    </main>
+    <footer>
+		<nav>
+			<span>|</span>
+            <a href="resume.html">Resume</a>
+			<span>|</span>
+            <a href="career_goals.html">Career Goals</a>
+			<span>|</span>
+        </nav>
+        <p>&copy; 2025 Henry Mallin. All rights reserved.</p>
+        <p>This resume uses semantic HTML5 elements for better accessibility and structure.</p>
+        <div id="current-date-container">
+            Current Date: <span id="current-date"></span>
+        </div>
+    </footer>
+	    <script>
+        const dateElement = document.getElementById('current-date');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+        console.log("Resumé loaded successfully. Structure is ready for external CSS.");
+    </script>
+</body>
+</html>

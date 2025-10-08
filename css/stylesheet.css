@@ -1,0 +1,438 @@
+/* Universal CSS */
+
+* {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;	
+}
+
+body {
+    background-color: #102A43;
+    color: #A8B3B8;
+    padding: 20px;
+}
+
+main, header, footer {
+    background-color: #334756;
+    border: 3px solid #A8B3B8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+header, footer {
+    margin: 30px auto;
+    text-align: center;
+    color: #A8B3B8;
+    padding: 15px 0;
+}
+
+header {
+    max-width: 1300px;
+}
+
+footer {
+    max-width: 1100px;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px 40px;
+}
+
+h1, h2, h3 {
+    color: #E6CCB2;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2em;
+    letter-spacing: 0.05em;
+    padding-top: 5px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E6CCB2;
+    padding-bottom: 5px;
+}
+
+header h1 {
+    font-size: 3em;	
+    color: #E6CCB2;
+    text-decoration: underline;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+header a, footer a {
+    color: #E6CCB2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+nav a {
+    font-weight: bold;
+    padding: 0 15px;
+    font-size: 1.1em;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #A8B3B8;
+    margin: 15px 0;
+}
+
+mark {
+    background-color: #E6CCB2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #102A43;
+    display: inline-block;
+    width: fit-content;
+    margin: 5px 0;
+}
+
+#current-date-container {
+    background-color: #495E70;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Resume CSS */
+
+.achievement {
+    background-color: #495E70;
+    color: #E6CCB2;
+    font-style: italic;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: .95em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#work-history ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+
+    margin-top: 10px;
+    background-color: #334756;
+    border: 2.5px solid #A8B3B8;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+thead th {
+    background-color: #495E70;
+    color: #E6CCB2;
+    border: 1px solid #A8B3B8;
+    padding: 12px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
+}
+
+tbody td {
+    border: 1px solid #A8B3B8;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2D4050;
+}
+
+.table_caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    color: #E6CCB2;
+}
+
+.status-current {
+    color: #E6CCB2;
+    font-weight: bold;
+    font-style: normal;
+    background-color: #102A43;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.two-column-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.two-column-layout #skills, .two-column-layout #hobbies {
+    width: 49%;
+    border: 2px solid #A8B3B8;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    background-color: #495E70;
+}
+
+#skills ol, #hobbies ol {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#skills ol li::before, #hobbies ol li::before {
+    content: "◈";
+    color: #E6CCB2;
+    font-weight: bold;
+    display: inline-block;	
+    width: 1.5em;
+    margin-left: -1.5em;
+}
+
+#skills ol li, #hobbies ol li {
+    background-color: #334756;
+    color: #E6CCB2;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 1em;
+}
+
+/* Career Goals CSS */
+
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    background-color: #495E70;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #A8B3B8;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #E6CCB2;
+}
+
+input[type="submit"] {
+    width: 150px;
+    padding: 10px 15px;
+    background-color: #E6CCB2;
+    color: #102A43;
+    font-weight: bold;
+    border: 2px solid #A8B3B8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+    background-color: #D3B9A6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.contact_form {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 3px solid #A8B3B8;
+    border-radius: 15px;
+}
+
+.figure-container {
+    text-align: center;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.audio-container {
+    width: 300px;
+    margin: 20px auto;	
+    display: flex;	
+    flex-direction: column;
+    align-items: center;	
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #495E70;	
+    border-radius: 10px;
+    color: #E6CCB2;
+}
+
+.album-cover-image {
+    width: 280px;	
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.video-container {
+    width: 320px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #495E70;
+    border-radius: 10px;
+    color: #E6CCB2;
+}
+
+.video-container figcaption {
+    order: -1;
+    margin-bottom: 10px;
+}
+
+.my-video-element {
+    width: 95%;
+    height: 340px;
+    object-fit: cover;
+    border: 3px solid #A8B3B8;
+    border-radius: 5px;
+}
+
+/* Cover Letter CSS */
+
+.date-line {
+    font-style: italic;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+    color: #A8B3B8;
+}
+
+#letter_intro, #letter_greeting, #letter_body, #sincerely {
+    margin-bottom: 15px;
+}
+
+/* Media Query for Mobile Devices (max-width: 768px) - FIXED TABLE */
+@media (max-width: 768px) {
+    
+    /* 1. Page and Layout Fixes */
+    body {
+        padding: 0 10px;
+    }
+    
+    .two-column-layout {
+        display: block; 
+        width: 100%;
+        gap: 0;
+    }
+    
+    .two-column-layout #skills, .two-column-layout #hobbies {
+        width: 100%; 
+        margin-bottom: 20px; 
+        padding-right: 20px; 
+    }
+
+    /* 2. Font Size Adjustments */
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+
+    /* 3. Media and Image Fit */
+    img, video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .album-cover-image {
+        max-width: 50%;
+    }
+    
+    .my-video-element {
+        width: 100%; 
+        height: auto;
+    }
+
+    /* 4. Table Stacking (Education Section) - CRITICAL FIXES HERE */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    thead { 
+        display: none; 
+    }
+    
+    td { 
+        border: none;
+        position: relative;
+        /* REDUCED padding-left to give more space for the content */
+        padding-left: 45%; 
+        /* Aligns the content (the value) to the right edge of the cell */
+        text-align: right; 
+    }
+    
+    /* Content Labeling */
+    td::before {
+        position: absolute;
+        left: 6px;
+        /* INCREASED label width slightly to prevent line breaks on long labels */
+        width: 40%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+        /* Aligns the label text to the left */
+        text-align: left; 
+    }
+    
+    #experience table td:nth-of-type(1)::before { content: "Institution"; }
+    #experience table td:nth-of-type(2)::before { content: "Degree / Certificate"; }
+    #experience table td:nth-of-type(3)::before { content: "Graduated"; }
+    #experience table td:nth-of-type(4)::before { content: "Course of Study"; }
+    #experience table td:nth-of-type(5)::before { content: "Dates"; }
+    
+    /* 5. Form and List Adjustments */
+    .contact_form form div {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .contact_form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    #work-history ul {
+        padding-left: 30px; 
+    }
+    #work-history li {
+        margin-bottom: 10px;
+    }
+}

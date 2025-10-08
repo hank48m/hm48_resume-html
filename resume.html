@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Henry Mallin's Resume</title>
+	<link rel="stylesheet" href="css/stylesheet.css">
+	<script>
+		if (sessionStorage.getItem('authenticated') !== 'true') {
+			window.location.replace("password.html");
+		}
+	</script>
+	</head>
+<body>
+	<header>
+		<h1><strong><u>HM</u></strong></h1>
+		<h2>Henry Mallin</h2>
+        <nav>
+			<span>|</span>
+            <a href="career_goals.html">Career Goals</a>
+			<span>|</span>
+            <a href="cover_letter.html">Cover Letter</a>
+			<span>|</span>
+        </nav>			
+		<hr>
+		<h3>Contact Information:</h3>
+			<h4>Email: <a href="mailto:hmallin@wgu.edu">hmallin@wgu.edu</a></h4>
+			<h4>Phone: <a href="tel:224-548-5554">(224)-548-5554</a></h4>
+		<hr>
+	</header>
+	<main>
+		<section id="about-me">
+			<h2>About Me</h2>
+				<p>Conscious and forward-thinking professional with an organized and competitive nature. Dedicated to attention for detail and self-improvement.  Possesses a persuasive communication style, strategic planning strengths, and top-notch conflict resolution skills.</p>
+		<hr>
+		</section>
+		<section id="work-history">
+			<h2>Work History</h2>
+				<ul>
+					<li>Carpenters Local 1 - Union Carpenter<br>Chicago<br>05/2015 - Current
+						<ul>
+							<li>Increased project efficiency by implementing precise measurements<br> and cutting techniques for materials.</li>
+							<li>Contributed to successful project management by reading blueprints<br> and following specific building codes.</li>
+						</ul>
+					</li>
+					<li>Uber - Rideshare Driver<br>Chicago<br>01/2023 - 09/2025
+						<ul>
+							<li>Enhanced customer service by providing prompt and courteous<br>transportation to passengers.</li>
+							<li>Developed strong communication skills while interacting<br>with diverse groups of riders daily.</li>
+						</ul>
+					</li>
+					<li>TruGreen Lawn Care - Tree and Shrub Sales Specialist<br>Rockford<br>03/2013 - 04/2015
+						<ul>
+							<li>Exceeded sales targets by consistently meeting and surpassing monthly quotas.</li>
+							<li><span class="achievement">Top 20 sales for Midwest area</span> and ranked <span class="achievement">#2 in Rockford for 2014</span>.</li>
+						</ul>
+					</li>
+				</ul>
+		<hr>			
+		</section>
+		<section id="experience">
+			<h2>Education</h2>
+				<table>
+					<caption><span class="table_caption">Educational History and Certifications</span></caption>
+					<thead>
+						<th><strong>Institution</strong></th>
+						<th><strong>Degree / Certificate</strong></th>
+						<th><strong>Graduated</strong></th>
+						<th><strong>Course of Study</strong></th>
+						<th><strong>Dates</strong></th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Western Governors University</td>
+							<td><em>Bachelors of Science</em></td>
+							<td><span class="status-current">Currently&nbsp;Enrolled</span></td>
+							<td>Data Analytics</td>
+							<td>09/2024 - current</td>
+						</tr>
+						<tr>
+							<td>Coursera / Udemy</td>
+							<td><em>Google Data Analytics Microsoft Power BI Desktop Certification</em></td>
+							<td>Yes</td>
+							<td>SQL, Rstudio, PgAdmin, Tableau, PowerBI</td>
+							<td>04/2024</td>
+						</tr>
+						<tr>
+							<td>Kishwaukee College</td>
+							<td><em>Associates of Science</em></td>
+							<td>Yes</td>
+							<td>Health and Human Sciences</td>
+							<td>05/2013</td>
+						</tr>
+					</tbody>
+				</table>
+		<hr>
+		</section>
+		<div class="two-column-layout">
+			<section id="skills">
+				<h2>Skills</h2>
+					<ol>
+						<li><span class="skill-tag">Excellent time management</span></li>
+						<li><span class="skill-tag">Strong communication</span></li>
+						<li><span class="skill-tag">Problem solving</span></li>
+						<li><span class="skill-tag">Competitive personality</span></li>
+						<li><span class="skill-tag">Punctual</span></li>
+					</ol>
+			</section>
+			<section id="hobbies">
+				<h2>Hobbies</h2>
+					<ol>
+						<li><span class="hobbies-tag">Guitar</span></li>
+						<li><span class="hobbies-tag">Volunteer Work: <i>Rebuilding Together</i></span></li>
+						<li><span class="hobbies-tag">Volunteer Work: <i>Dog Foster</i></span></li>
+						<li><span class="hobbies-tag">Team Sports</span></li>
+						<li><span class="hobbies-tag">Building Computers</span></li>
+
+					</ol>
+			</section>
+		</div>
+	</main>
+    <footer>
+		<nav>
+			<span>|</span>
+            <a href="career_goals.html">Career Goals</a>
+			<span>|</span>
+            <a href="cover_letter.html">Cover Letter</a>
+			<span>|</span>
+        </nav>
+        <p>&copy; 2025 Henry Mallin. All rights reserved.</p>
+        <p>This resume uses semantic HTML5 elements for better accessibility and structure.</p>
+        <div id="current-date-container">
+            Current Date: <span id="current-date"></span>
+        </div>
+    </footer>
+	    <script>
+        const dateElement = document.getElementById('current-date');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+        console.log("Resumé loaded successfully. Structure is ready for external CSS.");
+    </script>
+</body>
+</html>

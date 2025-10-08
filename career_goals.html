@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Data Driven Future</title>
+	<link rel="stylesheet" href="css/stylesheet.css">
+	
+	<script>
+		if (sessionStorage.getItem('authenticated') !== 'true') {
+			window.location.replace("password.html");
+		}
+	</script>
+    </head>
+<body>    
+	<header>
+		<h1><strong><u>HM</u></strong></h1>
+		<h2>Henry Mallin</h2>
+        <nav>
+			<span>|</span>
+            <a href="resume.html">Resume</a>
+			<span>|</span>
+            <a href="cover_letter.html">Cover Letter</a>
+			<span>|</span>
+        </nav>			
+		<hr>
+		<h3>Contact Information:</h3>
+			<h4>Email: <a href="mailto:hmallin@wgu.edu">hmallin@wgu.edu</a></h4>
+			<h4>Phone: <a href="tel:224-548-5554">(224)-548-5554</a></h4>
+		<hr>
+	</header>
+    
+	<main>        
+        <section>
+            <h2>2 Year Vision: Financial Data Analyst</h2>
+            <p>My immediate career objective is to transition from a trade and logistics background to a Data Analyst position, specializing in financial performance and risk modeling. I aim to apply my detailed execution skills and analytical training to deliver data-driven insights that improve business efficiency and profitability.
+			</p>
+		</section>
+
+		<section>
+			<h2>5 Year Vision: Senior Business Intelligence Consultant</h2>
+			<p>Within five years, I aim to achieve a Senior Business Intelligence Consultant role. This involves moving beyond basic reporting to design and implement end-to-end BI solutions, mentorship of junior analysts, and spearheading major data strategy initiatives across departments.
+            </p>
+		</section>
+
+		<section>
+			<h2>10 Year Vision: Director-level position in Data Strategy</h2>
+			<p>My long-term goal is to reach a Director-level position in Data Strategy. This role requires proficiency in governance, large-scale system architecture, and aligning data capabilities directly with the overarching corporate mission to drive massive organizational value.
+			</p>
+		</section>
+
+		<h2>My Woodworking Project</h2>
+			<div class="figure-container">
+				<figure>
+					<figcaption>I wanted to make a table for my apartment, so I designed one.<br>  I then used my carpentry skills to build this table.<br> Custom the way I wanted it.</figcaption>
+					<img src="image/woodworking.jpg" alt="Wood and tools" width="300">
+				</figure>
+			</div>
+
+		<h2>Buddy Guy - The Legend</h2>
+			<div class="audio-container">
+				<img src="image/born_to_play_guitar_album_cover.jpg" alt="Buddy Guy Album Cover" class="album-cover-image">
+				<figcaption>Born To Play Guitar</figcaption>
+				<audio controls>
+					<source src="media/born_to_play_guitar.m4a" type="audio/mp4">
+				</audio>
+			</div>
+
+		<h2>Me Playing Guitar</h2>
+			<div class="video-container">
+				<figcaption>Five Leaf Clover - Luke Combs</figcaption>
+				<video class="my-video-element" controls>
+					<source src="media/guitar_video.mp4" type="video/mp4">
+				</video>
+			</div>
+
+        <section class="contact_form">
+            <h2>Contact Form</h2>
+            <form action="https://wp.zybooks.com/form-viewer.php" method="POST">
+                <div>
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div>
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div>
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" required>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com"required>
+                </div>
+                <div>
+                    <label for="phone_number">Phone Number</label>
+                    <input type="tel" id="phone_number" name="phone_number" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" placeholder="(555)-555-5555" required>
+                </div>
+				<div>
+					<label for="message">Message:</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+				</div>
+				<div>
+					<hr>
+					<label for="contact_time">Best Contact Time:</label>
+					<input type="radio" id="am" name="contact_time" value="am">
+					<label for="am">A.M.</label>
+					<input type="radio" id="pm" name="contact_time" value="pm">
+					<label for="pm">P.M.</label>
+					<input type="radio" id="anytime" name="contact_time" value="anytime">
+					<label for="anytime">Anytime</label>
+					<hr>
+				</div>
+				<div>
+					<label for="contact_pref">Preferred Contact Method:</label>
+					<select id="contact_pref" name="contact_preferrence">
+						<option value="email">Email</option>
+						<option value="phone">Phone</option>
+						<option value="text">Text</option>
+					</select>
+				</div>
+					
+				<div class="button-container">
+					<input type="submit" value="Submit">
+				</div>
+            </form>
+        </section>
+    </main>		
+
+    <footer>
+		<nav>
+			<span>|</span>
+            <a href="resume.html">Resume</a>
+			<span>|</span>
+            <a href="cover_letter.html">Cover Letter</a>
+			<span>|</span>
+        </nav>
+        <p>&copy; 2025 Henry Mallin. All rights reserved.</p>
+        <p>This resume uses semantic HTML5 elements for better accessibility and structure.</p>
+        <div id="current-date-container">
+            Current Date: <span id="current-date"></span>
+        </div>
+    </footer>
+	    <script>
+        const dateElement = document.getElementById('current-date');
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString('en-US', options);
+        console.log("Resumé loaded successfully. Structure is ready for external CSS.");
+		</script>
+		
+</body>
+</html>
